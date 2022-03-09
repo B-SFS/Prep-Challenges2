@@ -39,15 +39,14 @@
 // Output: 5
 
 const objectCounter = (obj) => {
-    const initValue = 0 ;
-   const  sumWithReduce = obj.reduce((prev,current)=>
-    obj.length , initValue
-    )
-    return sumWithReduce;
-  }
-  
- 
-  
+    let num = 0;
+    let sum =  obj.reduce(function (previousValue, currentValue) {
+        num = num + 1;
+        return num;
+    },num);
+    return sum;
+
+}
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -64,19 +63,17 @@ const objectCounter = (obj) => {
 // you learnt before to split the string to words
 //
 // ------------------------
-
 const stringReverse = (str) => {
-  let arr  = str.split(" ");
+    let arr  = str.split(" ");
 
-  let result = "";
+    let result = "";
 
-  arr.reduce((prev, curr) => {
-      result = curr +" "+ result;
-  }, result);
+    arr.reduce((prev, curr) => {
+        result = curr +" "+ result;
+    }, result);
 
-  return result.slice(0, -1);
+    return result.slice(0, -1);
 }
-
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -123,3 +120,5 @@ const statistics = (obj) => {
 }
 // -------------------------------------------------------------------------------------------------------
 
+
+module.exports = { objectCounter, stringReverse, statistics };
