@@ -71,9 +71,27 @@ const oddFiltration = (arr) => {
 //  2- If one of the names is null dont add it to the full name
 
 const cvsFiltration = (arr) => {
-    const filtering = arr.filter(x =>{return x.yearsOfExperience > 2 && x.tech == "JS"})
-       return(`[{fullName:${filtering[0].firstName + " " + filtering[0].LastName} ,tech:${filtering[0].tech}}]`)
-       }
+    
+    let filtered = arr.filter(c => {
+        return c.yearsOfExperience > 4 && c.tech == "JS";
+    });
+
+    return filtered.map((cand) => {
+        let fullName = "";
+        if(cand.firstName != null){
+            fullName += cand.firstName;
+        }
+
+        if(cand.LastName != null){
+            fullName += " "+ cand.LastName;
+        }
+        return {
+            fullName: fullName,
+            tech: "JS"
+        };
+    });
+
+}
     
 // -------------------------------------------------------------------------------------------------------
 
