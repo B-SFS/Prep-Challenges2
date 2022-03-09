@@ -123,5 +123,3 @@ const statistics = (obj) => {
 }
 // -------------------------------------------------------------------------------------------------------
 
-
-module.exports = { objectCounter, stringReverse, statistics };
